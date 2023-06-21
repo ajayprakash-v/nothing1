@@ -167,6 +167,7 @@ svg circle{
 	font-family: f1;
 	padding: 2vw;
 	width: 100%;
+	font-size: clamp(7px, 1.2vw, 10vw);
 }
 #sec3 p:nth-child(1){
 	margin-top: 5vw;
@@ -188,6 +189,7 @@ svg circle{
 	color: white;
 	font-family: monospace;
 	padding-top: 5vw;
+	font-size: 5vw;
 }
 #sec4 h2{
 	font-size: 2vw;
@@ -310,7 +312,7 @@ svg circle{
 }
 #os p{
 	width: 40vw;
-	font-size: 1vw;
+	font-size: clamp(7px,1vw,10vw);
 	font-family: monospace;
 	margin-left: 1vw;
 	color: black;
@@ -324,11 +326,12 @@ svg circle{
 #sec6 h2{
 	padding-top: 3vw;
 	padding-bottom:3vw ;
-	font-size: 2vw;
+	font-size: clamp(12px,2vw,5vw);
+	margin-left: 1vw;
 }
 #sec6 p{
 	font-family: monospace;
-	font-size: 1vw;
+	font-size: clamp(5px,1vw,5vw);
 }
 #sampleimg{
 	display: flex;
@@ -382,4 +385,44 @@ svg circle{
 	font-size: 5vw;
 	padding-top: 15vw;
 	text-align: center;
+}
+#mobilehead{
+	display: none;
+}
+
+@media only screen and (max-width:1199px) and (min-width:320px){
+	#main{
+		width: 100%;
+		overflow-x: hidden;
+	}
+	#prespective img{
+		scale: 2;
+	}
+	#sec2{
+		height: 80vw;
+	}
+	#sec4{
+		height: 180vw;
+	}
+	#sec5{
+		height: 80vw;
+	}
+	#osimg img{
+		width: 90vw;
+		top: 10vw;
+	}
+	#sec6{
+		height: 65vw;
+	}
+	#sec6 img{
+		width: 50vw;
+	}
+	#mobilehead{
+		display: block;
+		position: absolute;
+		color: white;
+		z-index: 1;
+		top: 60vw;
+		font-size: 3vw;
+	}
 }

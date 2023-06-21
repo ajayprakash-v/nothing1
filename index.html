@@ -12,10 +12,12 @@
 	<script src="scrolltrigger.js"></script>
 </head>
 <body>
+	<div id="main">
 	<section id="sec1">
 		<div id="prespective">
 			<img src="images/1.png">
 		</div>
+		<h1 id="mobilehead">NOTHING PHONE (1) <br> <span>a new</span> GENERATION</h1>
 		<h1 id="head1">NOTHING PHONE (1) <br> <span>a new</span> GENERATION</h1>
 		<h1 id="head2">Less (1) <br> <span>Distraction</span> More soul</h1>
 		<h1 id="head3">Told (1) <br> <span>through</span> beautyful symbols.</h1>
@@ -127,7 +129,7 @@
 		</div>
 	</section>
 
-
+</div>
 
 	<script>
 		var head1=document.getElementById('head1')
@@ -141,6 +143,7 @@
 		im4=document.querySelector('#logo img:nth-child(4)')
 		var sw=window.screen.width
 		AOS.init()
+		width=screen.width
 		gsap.registerPlugin('ScrollTrigger')
 		gsap.to('#prespective',{
 			rotate:280,
@@ -153,7 +156,95 @@
 				scrub:3
 			}
 		})
+		if (width>320 && width<1199) {
+			gsap.to('#m2',{
+			rotate:-22,
+			left:-30,
+			y:10,
+			duration:1,
+			scrollTrigger:{
+				trigger:'#sec2',
+				start:'top 10%',
+				end:'bottom bottom',
+			}
+		})
+		gsap.to('#m3',{
+			rotate:22,
+			right:-10,
+			duration:1,
+			y:10,
+			scrollTrigger:{
+				trigger:'#sec2',
+				start:'top 10%',
+				end:'bottom bottom',
+			}
+		})
+
 		gsap.to('#sec1',{
+			scrollTrigger:{
+				trigger:'#sec1',
+				start:'top 0%',
+				end:'bottom 10%',
+				pin:true,
+				pinSpacing:true,
+			}
+		})
+		gsap.to('#u1',{
+			y:-50,
+			x:0,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 10%',
+				end:'bottom bottom',
+				scrub:2,
+
+			}
+		})
+		gsap.to('#u2',{
+			y:-50,
+			x:0,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 10%',
+				end:'bottom bottom',
+				scrub:3,
+
+			}
+		})
+		gsap.to('#u3',{
+			y:-50,
+			x:0,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 20%',
+				end:'bottom bottom',
+				scrub:4,
+
+			}
+		})
+		gsap.to('#u4',{
+			y:-50,
+			x:0,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 30%',
+				end:'bottom bottom',
+				scrub:4,
+
+			}
+		})
+
+		
+
+	}
+			
+else{
+	
+	gsap.to('#sec1',{
 			scrollTrigger:{
 				trigger:'#sec1',
 				start:'top 0%',
@@ -162,7 +253,8 @@
 				pinSpacing:true
 			}
 		})
-		gsap.to('#m2',{
+
+	gsap.to('#m2',{
 			rotate:-22,
 			left:-50,
 			y:10,
@@ -184,6 +276,99 @@
 				end:'bottom bottom',
 			}
 		})
+		gsap.to('#u1',{
+			y:-100,
+			x:-50,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 10%',
+				end:'bottom bottom',
+				scrub:2,
+
+			}
+		})
+		gsap.to('#u2',{
+			y:-110,
+			x:-50,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 10%',
+				end:'bottom bottom',
+				scrub:3,
+
+			}
+		})
+		gsap.to('#u3',{
+			y:-110,
+			x:-50,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 20%',
+				end:'bottom bottom',
+				scrub:4,
+
+			}
+		})
+		gsap.to('#u4',{
+			y:-110,
+			x:-50,
+			duration:10,
+			scrollTrigger:{
+				trigger:'#os',
+				start:'top 30%',
+				end:'bottom bottom',
+				scrub:4,
+
+			}
+		})
+
+
+		window.addEventListener('scroll',function(){
+			var val=window.scrollY
+			console.log(val)
+			if (val>10 && val<317) {
+				head1.classList.add('textup')
+			}
+			else{
+				head1.classList.remove('textup')	
+			}
+			if (val>317 && val<578) {
+				head2.classList.add('textup')
+			}
+			else{
+				head2.classList.remove('textup')
+			}
+			if (val>578 && val<1007) {
+				head3.classList.add('textup')
+			}
+			else if(val>1007){
+				head4.classList.add('textup')	
+			}
+			else{
+				head3.classList.remove('textup')
+				head4.classList.remove('textup')
+			}
+			if (val>3216) {
+				draw.classList.add('draw')
+			}
+			else{
+				draw.classList.remove('draw')	
+			}
+
+
+
+		})
+
+
+
+
+
+
+
+}
 		gsap.to('#c2',{
 			scale:1,
 			duration:2,
@@ -244,89 +429,7 @@
 				scrub:1
 			}
 		})
-		gsap.to('#u1',{
-			y:-100,
-			x:-50,
-			duration:10,
-			scrollTrigger:{
-				trigger:'#os',
-				start:'top 10%',
-				end:'bottom bottom',
-				scrub:2,
-
-			}
-		})
-		gsap.to('#u2',{
-			y:-110,
-			x:-50,
-			duration:10,
-			scrollTrigger:{
-				trigger:'#os',
-				start:'top 10%',
-				end:'bottom bottom',
-				scrub:3,
-
-			}
-		})
-		gsap.to('#u3',{
-			y:-110,
-			x:-50,
-			duration:10,
-			scrollTrigger:{
-				trigger:'#os',
-				start:'top 20%',
-				end:'bottom bottom',
-				scrub:4,
-
-			}
-		})
-		gsap.to('#u4',{
-			y:-110,
-			x:-50,
-			duration:10,
-			scrollTrigger:{
-				trigger:'#os',
-				start:'top 30%',
-				end:'bottom bottom',
-				scrub:4,
-
-			}
-		})
-		window.addEventListener('scroll',function(){
-			var val=window.scrollY
-			console.log(val)
-			if (val>10 && val<317) {
-				head1.classList.add('textup')
-			}
-			else{
-				head1.classList.remove('textup')	
-			}
-			if (val>317 && val<578) {
-				head2.classList.add('textup')
-			}
-			else{
-				head2.classList.remove('textup')
-			}
-			if (val>578 && val<1007) {
-				head3.classList.add('textup')
-			}
-			else if(val>1007){
-				head4.classList.add('textup')	
-			}
-			else{
-				head3.classList.remove('textup')
-				head4.classList.remove('textup')
-			}
-			if (val>3216) {
-				draw.classList.add('draw')
-			}
-			else{
-				draw.classList.remove('draw')	
-			}
-
-
-
-		})
+		
 
 
 
